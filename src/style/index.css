@@ -535,7 +535,7 @@ iframe {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate();
+  transform: translate(9.375rem, 0.625rem);
 }
 .main-img-rice {
   position: absolute;
@@ -550,7 +550,7 @@ iframe {
   .main-img-rice {
     width: 14.0625rem;
     height: 10.0625rem;
-    transform: translate(-3.125rem, 15.625rem);
+    transform: translate(-6.875rem, 15.625rem);
   }
 }
 
