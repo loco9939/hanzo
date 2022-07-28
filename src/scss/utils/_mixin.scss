@@ -3,6 +3,12 @@
 @use './variable' as *;
 @use './color' as *;
 
+// 마진 관련 믹스인
+@mixin autoMargin() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // 음료 컨테이너 믹스인
 @mixin beverageMobileContainer() {
   width: 100%;
