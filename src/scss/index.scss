@@ -1,6 +1,7 @@
 @use "./base";
 @use "./utils" as *;
 @use "./components" as *;
+@use "./layout" as *;
 
 // 메인 배너
 .main {
@@ -38,12 +39,11 @@
   }
   &-img-cheese {
     @include posLeft;
-    transform: translateX(rem(100px));
-    transform: translateY(rem(20px));
+    transform: translate()
   }
   &-img-rice {
     @include posRight;
-    transform: translate(rem(100px),rem(100px));
+    transform: translate(rem(-150px),rem(150px));
   }
   @include mobile {
     &-img-cheese {

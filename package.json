@@ -4,12 +4,8 @@
     "sass": "sass src/scss/index.scss src/style/index.css",
     "watch": "npm run sass -- --watch",
     "server": "live-server",
-<<<<<<< HEAD
-    "clear": "rimraf src/style"
-=======
     "clear": "rimraf src/style",
     "build": "postcss src/scss/index.scss -o src/style/index.css"
->>>>>>> 6736e047c9b565a153b428b1ad906365bd0c3efe
   },
   "devDependencies": {
     "cssnano": "^5.1.12",

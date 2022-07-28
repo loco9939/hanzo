@@ -25,13 +25,18 @@
   </header>
   <main class="main">
     <h2 class="a11yHidden">메뉴보기</h2>
-    <p>always beside you ediya coffee</p>
+    <p>always beside you <span>ediya coffee</span></p>
     <p>늘 당신 곁에, 이디야 커피의 새로운 메뉴를 맛보세요.</p>
     <button class="btn menu-button">메뉴보기</button>
-    <figure class="main-figure">
-      <img src="/" frameborder="0" alt="치즈가 쿠키했대 쉐이크" />
-      <img src="/" frameborder="0" alt="초코 묻고 더블 쉐이크, 밥대신 라이스 쉐이크" />
-    </figure>
+    <picture class="main-img-cheese">
+      <source media="(min-width:767px)" srcset="./src/assets/images/cheese-cookie.png" frameborder="0"
+        alt="치즈가 쿠키했대 쉐이크" />
+      <img src="./src/assets/images/cheese-cookie-img.png" alt="" />
+    </picture>
+    <picture class="main-img-rice">
+      <source media="(min-width:767px)" srcset="./src/assets/images/choco-rice.png" frameborder="0" alt="밥대신 라이스 쉐이크" />
+      <img src="./src/assets/images/choco-rice-img.png" alt="" />
+    </picture>
   </main>
 
   <section>
