@@ -449,6 +449,12 @@ legend {
   display: block;
   width: 100%;
 }
+.beverage-item article.is--active ul {
+  background: #f8f8f8;
+}
+.beverage-item article.is--active ~ :not(.is--active) img {
+  background: yellow;
+}
 .beverage-item .info-close {
   position: absolute;
   font-size: 1.375rem;
@@ -462,7 +468,9 @@ legend {
 .beverage-item img {
   transition: all 0.3s ease-in-out;
 }
-.beverage-item:hover img, .beverage-item:focus img {
+
+.beverage-button:hover img,
+.beverage-button:focus img {
   transform: scale(1.1);
 }
 

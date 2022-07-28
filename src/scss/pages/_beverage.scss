@@ -97,10 +97,15 @@
     &.is--active {
       display: block;
       width: 100%;
-    }
-  }
 
-  &.is--active {
+      ul {
+        background: #f8f8f8;
+      }
+
+      & ~ :not(.is--active) img {
+        background: yellow;
+      }
+    }
   }
 
   .info-close {
@@ -117,11 +122,11 @@
   img {
     transition: all 0.3s ease-in-out;
   }
+}
 
-  &:hover img,
-  &:focus img {
-    transform: scale(1.1);
-  }
+.beverage-button:hover img,
+.beverage-button:focus img {
+  transform: scale(1.1);
 }
 
 @include mobile {
