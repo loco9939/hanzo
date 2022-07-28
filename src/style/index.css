@@ -333,7 +333,7 @@ a {
   text-decoration: none;
 }
 
-/* .a11yHidden, */
+.a11yHidden,
 legend {
   overflow: hidden;
   position: absolute !important;
@@ -375,8 +375,18 @@ iframe {
 }
 .beverage-item figure {
   display: flex;
+  height: 100%;
   flex-flow: column nowrap;
   align-items: center;
+  gap: 1.25rem;
+  justify-content: center;
+}
+.beverage-item figcaption {
+  margin-bottom: 1.5625rem;
+}
+.beverage-item img {
+  width: 17.125rem;
+  height: 17.125rem;
 }
 .beverage-item article {
   display: none;

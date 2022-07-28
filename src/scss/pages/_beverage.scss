@@ -13,8 +13,19 @@
 
   figure {
     display: flex;
+    height: 100%;
     flex-flow: column nowrap;
     align-items: center;
+    gap: rem(20px);
+    justify-content: center;
+  }
+
+  figcaption{
+    margin-bottom: rem(25px);
+  }
+
+  img{
+    @include beverageImageSize;
   }
 
   // 개별 음료 정보
