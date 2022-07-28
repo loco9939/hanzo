@@ -333,17 +333,6 @@ a {
   text-decoration: none;
 }
 
-.a11yHidden,
-legend {
-  overflow: hidden;
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
-  width: 1px;
-  height: 1;
-  margin: -1px;
-}
-
 body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font: inherit;
@@ -362,195 +351,70 @@ iframe {
   height: auto;
 }
 
-.button {
-  border: 0;
-  padding: 0.25rem 1rem;
-  border-radius: 0.25rem;
-  height: 2rem;
-  font-size: 0.875rem;
+.a11yHidden,
+legend {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1;
+  margin: -1px;
 }
 
-.formInput__input {
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 0.25rem;
-  height: 2rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.header {
-  padding: 1rem 2rem 1rem 2rem;
-  margin: 0 auto;
-  width: 90%;
-  height: 50px;
-  position: relative;
-}
-
-.main-logo {
-  min-width: 100%;
-  position: absolute;
-  top: 17px;
-}
-
-.main-logo img {
-  width: 140px;
-  height: 15px;
-}
-
-.nav {
-  float: right;
-}
-
-.menu {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-.menu-list {
-  text-align: center;
-  color: #24388D;
-  font-weight: 700;
-}
-
-.menu-list a {
-  display: block;
-  width: 7rem;
-}
-
-@media (max-width: 767px) {
-  .menu {
-    display: none;
-  }
-
-  .main-logo {
-    width: 200px;
-  }
-}
-@media (max-width: 992px) {
-  .menu a {
-    width: 4rem;
-  }
-}
-.footer {
-  background: #14182C;
-  color: #F5F5F5;
-  font-size: 14px;
-  width: 100%;
-}
-
-.footer-wrapper {
-  margin: 0 auto;
-  width: 90%;
-}
-
-.footer-nav {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.footer-content {
-  text-align: center;
-}
-
-.footer-nav-list a {
-  display: block;
-  padding: 10px;
-}
-
-.address {
+.beverage-list {
   display: flex;
   flex-flow: row wrap;
-  gap: 10px;
   justify-content: center;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  line-height: 1.2;
-  max-width: 80%;
-  margin: 0 auto;
+  gap: 1.25rem;
 }
 
-.footer-logo {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.copyright {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-  padding-bottom: 30px;
-}
-
-@media (max-width: 767px) {
-  .footer-nav {
-    flex-wrap: wrap;
-  }
-
-  .footer-logo {
-    width: 200px;
-  }
-}
-.main {
-  background: #BAE5FB;
-  color: #24388D;
-  text-align: center;
-  width: 100%;
+.beverage-item {
+  background-color: #f5f5f5;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 2.25rem;
-  padding-bottom: 1rem;
-  margin-bottom: 10.3125rem;
 }
-.main p {
-  width: 70%;
-  font-size: 1rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  margin-left: auto;
-  margin-right: auto;
+.beverage-item figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
-.main p:nth-child(2) {
-  font-weight: 100;
-  font-size: 2.25rem;
-}
-.main p:nth-child(2) span {
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.main .btn {
-  border: 1px solid #24388D;
-  background: transparent;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-.main-img-cheese {
+.beverage-item article {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate();
 }
-.main-img-rice {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-9.375rem, 9.375rem);
+.beverage-item article .beverage-title {
+  border-bottom: 2px solid #0f0f0f;
 }
+.beverage-item article .beverage-title span {
+  display: block;
+}
+.beverage-item article ul {
+  display: flex;
+  flex-flow: column wrap;
+  height: 3.9375rem;
+  margin: 1rem 1.5rem;
+}
+.beverage-item article.is--active {
+  display: block;
+}
+
 @media (max-width: 767px) {
-  .main-img-cheese {
-    display: none;
+  .beverage-item {
+    width: 100%;
+    height: 23.3125rem;
   }
-  .main-img-rice {
-    width: 14.0625rem;
-    height: 10.0625rem;
-    transform: translate(-3.125rem, 15.625rem);
+}
+@media (min-width: 768px) {
+  .beverage-list {
+    max-width: 46.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .beverage-item {
+    width: 22.4375rem;
+    height: 23.3125rem;
   }
 }
 

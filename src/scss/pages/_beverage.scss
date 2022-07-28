@@ -1,0 +1,63 @@
+@use './../utils' as *;
+
+.beverage-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: rem(20px);
+}
+
+.beverage-item {
+  background-color: $grayscale-snow;
+  position: relative;
+
+  figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  // 개별 음료 정보
+  article {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .beverage-title {
+      span {
+        display: block;
+      }
+
+      border-bottom: 2px solid $grayscale-black;
+    }
+
+    ul {
+      display: flex;
+      flex-flow: column wrap;
+      height: rem(63px);
+      margin: rem(16px) rem(24px);
+    }
+
+    &.is--active {
+      display: block;
+    }
+  }
+}
+
+@include mobile {
+  .beverage-item {
+    @include beverageMobileContainer;
+  }
+}
+
+@include desktop {
+  .beverage-list {
+    max-width: rem(740px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .beverage-item {
+    @include beverageDesktopContainer;
+  }
+}

@@ -1,136 +1,20 @@
-@use "sass:math";
-@use "./unit" as *;
-@use "./variable" as *;
+@use 'sass:math';
+@use './unit' as *;
+@use './variable' as *;
+@use './color' as *;
 
-$breakpoint: 768px;
-// 여백 관련 믹스인
-@mixin autoMargin {
-  margin-left: auto;
-  margin-right: auto;
-}
-@mixin marginX($marginX: 0) {
-  margin-left: rem($marginX);
-  margin-right: rem($marginX);
-}
-@mixin marginY($marginY: 0) {
-  margin-top: rem($marginY);
-  margin-bottom: rem($marginY);
-}
-
-// padding 관련 믹스인
-@mixin paddingX($paddingX: 0) {
-  padding-left: rem($paddingX);
-  padding-right: rem($paddingX);
-}
-@mixin paddingY($paddingY: 0) {
-  padding-top: rem($paddingY);
-  padding-bottom: rem($paddingY);
-}
-
-// position 관련 믹스인
-@mixin pos($pos: absolute, $t: initial, $l: initial) {
-  position: $pos;
-  top: $t;
-  left: $l;
-}
-@mixin posLeft($t: 0, $l: 0, $pos: absolute) {
-  position: $pos;
-  top: $t;
-  left: $l;
-}
-@mixin posRight($t: 0, $r: 0, $pos: absolute) {
-  position: $pos;
-  top: $t;
-  right: $r;
-}
-
-@mixin posCenterX($pos: absolute) {
-  position: $pos;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@mixin posCenterY($pos: absolute) {
-  position: $pos;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@mixin posCenter($pos: absolute) {
-  position: $top;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@mixin boxSizeMinMax($max: $container-width) {
-  max-width: $max;
-  @include autoMargin;
-}
-
-// 말줄임표 믹스인
-@mixin textEllipsis {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-// 반응형 iframe
-@mixin responsIframe($w: 16, $h: 9) {
-  position: relative;
+// 음료 컨테이너 믹스인
+@mixin beverageMobileContainer() {
   width: 100%;
-  height: 0 !important;
-  padding-top: math.div($h, $w) * 100%;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  height: rem(373px);
 }
 
-// float 이슈를 해결하기 위한 믹스인
-@mixin clearFix {
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+@mixin beverageDesktopContainer() {
+  width: rem(359px);
+  height: rem(373px);
 }
 
-// 반응형 디스플레이를 위한 배경이미지 관련 믹스인
-@mixin bgRetina($file, $type) {
-  background-image: url("./../assets/images/" + $file + "-img." + $type);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-
-  @media (min-width: $breakpoint) {
-    & {
-      background-image: url("./../assets/images/" + $file + "." + $type);
-    }
-  }
-}
-
-// 텍스트 스타일 믹스인
-@mixin textStyle($size) {
-  font-size: rem($size);
-  letter-spacing: -0.02em;
-  line-height: 1.5;
-}
-
-@mixin textHeading($size) {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.4;
-  font-size: rem($size);
-}
-
-// 그리드 믹스인
-@mixin gridBox($column-count: 12, $gap: 20px) {
-  display: grid;
-  grid-template-columns: repeat($column-count, 1fr);
-  grid-template-rows: auto;
-  gap: rem($gap);
+@mixin beverageImageSize() {
+  width: rem(204px);
+  height: rem(293px);
 }
