@@ -1,3 +1,24 @@
 @use 'sass:math';
 @use './unit' as *;
 @use './variable' as *;
+@use './color' as *;
+
+// 음료 컨테이너 믹스인
+@mixin beverageMobileContainer() {
+  width: rem(339px);
+  height: rem(373px);
+}
+
+@mixin beverageDesktopContainer() {
+  width: rem(359px);
+  height: rem(373px);
+}
+
+@mixin beverageImageSize() {
+  width: rem(204px);
+  height: rem(293px);
+}
+
+
+
+

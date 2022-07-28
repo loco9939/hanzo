@@ -1,4 +1,3 @@
-body {
-  background: skyblue;
-  color: blue;
-}
+@use './base';
+@use './pages';
+@use './utils';

@@ -1,0 +1,29 @@
+@use './../utils' as *;
+
+.beverage-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.beverage-item {
+  background-color: green;
+}
+
+@include mobile {
+  .beverage-list {
+    margin: 0 auto;
+  }
+  .beverage-item {
+    @include beverageMobileContainer;
+  }
+}
+
+@include desktop {
+  .beverage-list {
+    width: rem(740px);
+  }
+  .beverage-item {
+    @include beverageDesktopContainer;
+  }
+}
