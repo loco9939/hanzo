@@ -380,25 +380,18 @@ iframe {
 
 .header {
   padding: 1rem 2rem 1rem 2rem;
-  margin: 0 auto;
-  width: 90%;
+  width: 100vw;
   height: 50px;
-  position: relative;
-}
-
-.main-logo {
-  min-width: 100%;
-  position: absolute;
-  top: 17px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-logo img {
   width: 140px;
   height: 15px;
-}
-
-.nav {
-  float: right;
+  min-width: 140px;
 }
 
 .menu {
@@ -406,31 +399,24 @@ iframe {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  margin-left: 50px;
 }
 .menu-list {
   text-align: center;
   color: #24388D;
   font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
 }
 
 .menu-list a {
   display: block;
-  width: 7rem;
+  margin-left: 20px;
 }
 
 @media (max-width: 767px) {
   .menu {
     display: none;
-  }
-
-  .main-logo {
-    width: 200px;
-  }
-}
-@media (max-width: 992px) {
-  .menu a {
-    width: 4rem;
   }
 }
 .footer {
@@ -442,7 +428,7 @@ iframe {
 
 .footer-wrapper {
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
 }
 
 .footer-nav {
@@ -456,6 +442,10 @@ iframe {
 
 .footer-content {
   text-align: center;
+}
+
+.footer-nav-list {
+  white-space: nowrap;
 }
 
 .footer-nav-list a {
@@ -490,7 +480,6 @@ iframe {
   .footer-nav {
     flex-wrap: wrap;
   }
-
   .footer-logo {
     width: 200px;
   }
