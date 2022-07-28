@@ -362,17 +362,6 @@ iframe {
   height: auto;
 }
 
-.a11yHidden,
-legend {
-  overflow: hidden;
-  position: absolute !important;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
-  width: 1px;
-  height: 1;
-  margin: -1px;
-}
-
 .beverage {
   padding-top: 1.875rem;
 }
@@ -410,7 +399,7 @@ legend {
   left: 0;
   height: 100%;
   padding: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .beverage-item article .beverage-title {
   font-size: 1.125rem;
@@ -424,24 +413,25 @@ legend {
   padding-bottom: 0.875rem;
 }
 .beverage-item article .beverage-info {
-  padding-top: 1rem;
+  padding-top: 0.625rem;
   font-size: 1rem;
 }
 .beverage-item article ul {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 98%;
   display: flex;
   flex-flow: column wrap;
+  justify-content: space-between;
   height: 3.9375rem;
   margin: 0 0.0625rem 0.6875rem 0.0625rem;
+  padding-top: 0.625rem;
 }
 .beverage-item article ul li {
   position: relative;
   width: 50%;
-  margin-left: 0.9375rem;
-  margin-bottom: 0.3125rem;
+  text-indent: 1rem;
   font-size: 0.8125rem;
 }
 .beverage-item article ul li:nth-child(1) {
@@ -453,7 +443,7 @@ legend {
   top: 0;
   right: 0;
   width: 0.0625rem;
-  height: 3.9375rem;
+  height: 3.625rem;
   background-color: #0f0f0f;
 }
 .beverage-item article ul span {
@@ -469,22 +459,26 @@ legend {
 .beverage-item article.is--active {
   display: block;
   width: 100%;
+  border: 5px solid #24388d;
+  border-radius: 0.625rem;
+}
+.beverage-item article.is--active ~ button {
+  display: block;
 }
 .beverage-item article.is--active ul {
   background: #f8f8f8;
-}
-.beverage-item article.is--active ~ :not(.is--active) img {
-  background: yellow;
+  opacity: 1;
 }
 .beverage-item .info-close {
   position: absolute;
   font-size: 1.375rem;
   padding: 0;
-  top: 1rem;
-  right: 1rem;
+  top: 1.25rem;
+  right: 1.5rem;
   font-weight: 300;
   border: 0;
   background: transparent;
+  display: none;
 }
 .beverage-item img {
   transition: all 0.3s ease-in-out;
@@ -497,7 +491,7 @@ legend {
 
 @media (max-width: 767px) {
   .beverage-item {
-    width: 100%;
+    width: 21.1875rem;
     height: 23.3125rem;
   }
 }

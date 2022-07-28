@@ -11,7 +11,7 @@
 
 // 음료 컨테이너 믹스인
 @mixin beverageMobileContainer() {
-  width: 100%;
+  width: rem(339px);
   height: rem(373px);
 }
 

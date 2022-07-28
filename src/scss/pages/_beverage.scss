@@ -40,7 +40,7 @@
     left: 0;
     height: 100%;
     padding: rem(20px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
 
     .beverage-title {
       font-size: rem(18px);
@@ -55,7 +55,7 @@
     }
 
     .beverage-info {
-      padding-top: rem(16px);
+      padding-top: rem(10px);
       font-size: rem(16px);
     }
 
@@ -63,17 +63,18 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 100%;
+      width: 98%;
       display: flex;
       flex-flow: column wrap;
+      justify-content: space-between;
       height: rem(63px);
       margin: 0 rem(1px) rem(11px) rem(1px);
+      padding-top: rem(10px);
 
       li {
         position: relative;
         width: 50%;
-        margin-left: rem(15px);
-        margin-bottom: rem(5px);
+        text-indent: rem(16px);
         font-size: rem(13px);
       }
 
@@ -87,7 +88,7 @@
         top: 0;
         right: 0;
         width: rem(1px);
-        height: rem(63px);
+        height: rem(58px);
         background-color: $grayscale-black;
       }
 
@@ -108,26 +109,31 @@
     &.is--active {
       display: block;
       width: 100%;
+      border: 5px solid $primary-blue-100;
+      border-radius: rem(10px);
+      &~button{
+        display: block;
+      }
 
       ul {
         background: #f8f8f8;
-      }
-
-      & ~ :not(.is--active) img {
-        background: yellow;
+        opacity: 1;
       }
     }
   }
+
+
 
   .info-close {
     position: absolute;
     font-size: rem(22px);
     padding: 0;
-    top: rem(16px);
-    right: rem(16px);
+    top: rem(20px);
+    right: rem(24px);
     font-weight: 300;
     border: 0;
     background: transparent;
+    display:none;
   }
 
   img {
