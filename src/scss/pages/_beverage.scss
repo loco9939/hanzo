@@ -1,5 +1,9 @@
 @use './../utils' as *;
 
+.beverage {
+  padding-top: rem(30px);
+}
+
 .beverage-list {
   display: flex;
   flex-flow: row wrap;
@@ -24,13 +28,24 @@
     top: 0;
     left: 0;
     height: 100%;
+    padding: rem(20px);
+    background-color: rgba(255, 255, 255, 0.5);
 
     .beverage-title {
+      font-size: rem(18px);
+      border-bottom: 2px solid $grayscale-black;
+      line-height: rem(22px);
       span {
         display: block;
+        font-size: rem(14px);
+        color: $grayscale-gray;
+        padding-bottom: rem(14px);
       }
+    }
 
-      border-bottom: 2px solid $grayscale-black;
+    .beverage-info {
+      padding-top: rem(16px);
+      font-size: rem(16px);
     }
 
     ul {
@@ -41,16 +56,71 @@
       display: flex;
       flex-flow: column wrap;
       height: rem(63px);
-      margin: rem(16px) rem(24px);
+      margin: 0 rem(1px) rem(11px) rem(1px);
+
+      li {
+        position: relative;
+        width: 50%;
+        margin-left: rem(15px);
+        margin-bottom: rem(5px);
+        font-size: rem(13px);
+      }
+
+      li:nth-child(1) {
+        position: relative;
+      }
+
+      li:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: rem(1px);
+        height: rem(63px);
+        background-color: $grayscale-black;
+      }
 
       span {
-        margin-left: rem(30px);
+        float: right;
+        width: 50%;
+      }
+
+      span::before {
+        content: '(';
+      }
+
+      span::after {
+        content: ')';
       }
     }
 
     &.is--active {
       display: block;
+      width: 100%;
     }
+  }
+
+  &.is--active {
+  }
+
+  .info-close {
+    position: absolute;
+    font-size: rem(22px);
+    padding: 0;
+    top: rem(16px);
+    right: rem(16px);
+    font-weight: 300;
+    border: 0;
+    background: transparent;
+  }
+
+  img {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover img,
+  &:focus img {
+    transform: scale(1.1);
   }
 }
 
@@ -63,8 +133,7 @@
 @include desktop {
   .beverage-list {
     max-width: rem(740px);
-    margin-left: auto;
-    margin-right: auto;
+    @include autoMargin;
   }
   .beverage-item {
     @include beverageDesktopContainer;

@@ -362,6 +362,10 @@ legend {
   margin: -1px;
 }
 
+.beverage {
+  padding-top: 1.875rem;
+}
+
 .beverage-list {
   display: flex;
   flex-flow: row wrap;
@@ -384,12 +388,23 @@ legend {
   top: 0;
   left: 0;
   height: 100%;
+  padding: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .beverage-item article .beverage-title {
+  font-size: 1.125rem;
   border-bottom: 2px solid #0f0f0f;
+  line-height: 1.375rem;
 }
 .beverage-item article .beverage-title span {
   display: block;
+  font-size: 0.875rem;
+  color: #616161;
+  padding-bottom: 0.875rem;
+}
+.beverage-item article .beverage-info {
+  padding-top: 1rem;
+  font-size: 1rem;
 }
 .beverage-item article ul {
   position: absolute;
@@ -399,13 +414,56 @@ legend {
   display: flex;
   flex-flow: column wrap;
   height: 3.9375rem;
-  margin: 1rem 1.5rem;
+  margin: 0 0.0625rem 0.6875rem 0.0625rem;
+}
+.beverage-item article ul li {
+  position: relative;
+  width: 50%;
+  margin-left: 0.9375rem;
+  margin-bottom: 0.3125rem;
+  font-size: 0.8125rem;
+}
+.beverage-item article ul li:nth-child(1) {
+  position: relative;
+}
+.beverage-item article ul li:nth-child(1)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.0625rem;
+  height: 3.9375rem;
+  background-color: #0f0f0f;
 }
 .beverage-item article ul span {
-  margin-left: 1.875rem;
+  float: right;
+  width: 50%;
+}
+.beverage-item article ul span::before {
+  content: "(";
+}
+.beverage-item article ul span::after {
+  content: ")";
 }
 .beverage-item article.is--active {
   display: block;
+  width: 100%;
+}
+.beverage-item .info-close {
+  position: absolute;
+  font-size: 1.375rem;
+  padding: 0;
+  top: 1rem;
+  right: 1rem;
+  font-weight: 300;
+  border: 0;
+  background: transparent;
+}
+.beverage-item img {
+  transition: all 0.3s ease-in-out;
+}
+.beverage-item:hover img, .beverage-item:focus img {
+  transform: scale(1.1);
 }
 
 @media (max-width: 767px) {
