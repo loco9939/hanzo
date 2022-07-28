@@ -3,9 +3,9 @@
     "start": "run-p watch server",
     "sass": "sass src/scss:src/style",
     "watch": "npm run sass -- --watch",
-    "server": "live-server src",
+    "server": "live-server",
     "clear": "rimraf src/style",
-    "build": "postcss src/style/index.css -o src/style/main.css"
+    "build": "postcss src/scss/index.scss -o src/style/index.css"
   },
   "devDependencies": {
     "cssnano": "^5.1.12",
