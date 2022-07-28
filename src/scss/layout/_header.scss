@@ -3,6 +3,7 @@
 
 // 헤더
 .header{
+  position: relative;
   padding: 1rem 2rem 1rem 2rem;
   width: 100vw;
   height: 50px;
@@ -39,6 +40,7 @@
   margin-left: 20px;
 }
 
+
 @include mobile {
   .header{
     justify-content: space-between;
@@ -53,9 +55,9 @@
     transition: all 300ms;
   }
 
-  .is-active{
-    left: 0;
-  }
+  // .nav{
+  //   left: 0;
+  // }
 
   .menu{
     height: 100vh;
@@ -82,4 +84,9 @@
   .menu-list a:active{
     background: $primary-blue-80;
   }
+
 }
+
+
+
+

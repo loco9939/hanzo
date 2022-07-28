@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     @include paddingY(10px);
+    border-bottom: 2px solid $grayscale-gray;
 }
 
 .footer-content{
@@ -47,6 +48,7 @@
 
 .footer-logo{
     @include paddingY(10px);
+    margin-top: 10px;
 }
 
 .copyright{
@@ -59,6 +61,6 @@
         flex-wrap: wrap;
     }
     .footer-logo{
-        width: 200px;
+        width: 170px;
     }
 }
