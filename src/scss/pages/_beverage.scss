@@ -23,6 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
 
     .beverage-title {
       span {
@@ -33,10 +34,18 @@
     }
 
     ul {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       display: flex;
       flex-flow: column wrap;
       height: rem(63px);
       margin: rem(16px) rem(24px);
+
+      span {
+        margin-left: rem(30px);
+      }
     }
 
     &.is--active {
