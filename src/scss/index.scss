@@ -3,6 +3,12 @@
 @use "./components" as *;
 @use "./layout" as *;
 
+h1,h2,h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
 // 메인 배너
 .main {
   background: $secondary-lightblue-100;
@@ -15,12 +21,32 @@
   padding-top: rem(36px);
   padding-bottom: rem(16px);
   margin-bottom: rem(165px);
+
+  // 메인 텍스트 스타일링
   & p {
     width: 70%;
     font-size: rem(16px);
     @include marginY(20px);
     margin-left: auto;
     margin-right: auto;
+  }
+  & p::before {
+    content: "";
+    @include posCenterX;
+    width: 50px;
+    display: block;
+    top: 105px;
+    border-top: 1px solid black;
+  }
+  @include respond-until(md) {
+    & p::before {
+      content: "";
+      @include posCenterX;
+      width: 50px;
+      display: block;
+      top: 150px;
+      border-top: 1px solid black;
+    }
   }
   & p:nth-child(2) {
     font-weight: 100;
@@ -31,30 +57,151 @@
       text-transform: uppercase;
     }
   }
-  & .btn {
-    border: 1px solid $primary-blue-100;
-    background: transparent;
-    @include paddingX(16px);
-    @include paddingY(8px);
-  }
+
+  // 메인 이미지
   &-img-cheese {
-    @include posLeft;
-    transform: translate(rem(150px),rem(10px))
+    @include posLeft($pos: relative);
+    transform: translate(350px, 100px);
+    display: inline-block;
+    animation-name: moveEffect;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
   }
   &-img-rice {
-    @include posRight;
-    transform: translate(rem(-150px),rem(150px));
+    @include posRight($pos: relative);
+    display: inline-block;
+    animation-name: moveEffect;
+    animation-duration: 400ms;
+    animation-delay: 100ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    transform: translate(rem(-200px), rem(200px));
   }
   @include mobile {
     &-img-cheese {
       display: none;
     }
     &-img-rice {
-      width: rem(225px);
-      height: rem(161px);
-      transform: translate(rem(-110px),rem(250px));
+      & img {
+        width: 225px;
+        height: 161px;
+      }
+    }
+    &-img {
+      margin-top: rem(230px);
+      padding-right: rem(100px);
+    }
+  }
+  &-img {
+    @include posLeft(rem(20px), rem(50px));
+    @include posCenterX;
+    min-width: 1200px;
+
+    &-cheese {
+      @include posLeft($pos: relative);
+      // display: inline-block;
+      margin-right: 50px;
+      padding-left: 100px;
+    }
+    &-rice {
+      @include posRight($pos: relative);
+      margin-left: 150px;
     }
   }
 }
+// 애니메이션
+@keyframes moveEffect {
+  0% {
+    transform: translateY(rem(0px));
+  }
+  100% {
+    transform: translateY(rem(5px));
+  }
+}
+// 버튼 틀
+.btn {
+  border: 1px solid $primary-blue-100;
+  background: transparent;
+  cursor: pointer;
+  @include paddingX(16px);
+  @include paddingY(8px);
+}
 
+section {
+  display: grid;
+  grid-template-columns: repeat(1fr, 12);
+  grid-template-rows: auto;
 
+  & .iframe-wrapper {
+    grid-area: video;
+  }
+  & .notice {
+    grid-row: notice;
+  }
+  & .news {
+    grid-area: news;
+  }
+
+  & .notice {
+    // padding: rem(12px);
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    background: $primary-blue-100;
+    min-height: rem(115px);
+
+    & h3 {
+      min-width: 125px;
+      padding: rem(12px);
+      font-size: rem(24px);
+      color: $grayscale-white;
+    }
+    &-content {
+      max-width: 100%;
+      height: 100%;
+      background: $grayscale-white;
+      @include paddingX(18px);
+      @include paddingY(18px);
+      & em{
+        display: block;
+        font-size: rem(20px);
+        color: $primary-blue-100;
+        font-weight: 700;
+      }
+      & time{
+        color: $grayscale-gray;
+      }
+      & p{
+        margin-top: rem(16px);
+      }
+    }
+    &-button-container {
+      @include posLeft(110px, 85px);
+    }
+    &-btn-left {
+      @include posLeft;
+      padding: 0;
+      border: 1px solid $grayscale-white;
+      width: 16px;
+      height: 16px;
+    }
+    &-btn-right {
+      @include posLeft($l: rem(16px));
+      padding: 0;
+      border: 1px solid $grayscale-white;
+      border-left: 0;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @include mobile {
+    grid-template-areas:
+      "video video video video video video video video video video video video"
+      "video video video video video video video video video video video video"
+      "notice notice notice notice notice notice notice notice notice notice notice notice"
+      "news news news news news news news news news news news news";
+  }
+}
