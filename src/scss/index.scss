@@ -38,8 +38,8 @@
   }
   &-img-cheese {
     @include posLeft;
-    transform: translateX(rem(100px));
-    transform: translateY(rem(20px));
+    transform: translateX(rem(0px));
+    transform: translateY(rem(0px));
   }
   &-img-rice {
     @include posRight;
@@ -52,7 +52,7 @@
     &-img-rice {
       width: rem(225px);
       height: rem(161px);
-      transform: translate(rem(-50px),rem(250px));
+      transform: translate(rem(-120px),rem(250px));
     }
   }
 }

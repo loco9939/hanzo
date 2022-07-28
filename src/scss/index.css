@@ -420,8 +420,8 @@ legend {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateX(6.25rem);
-  transform: translateY(1.25rem);
+  transform: translateX(0rem);
+  transform: translateY(0rem);
 }
 .main-img-rice {
   position: absolute;
@@ -436,6 +436,6 @@ legend {
   .main-img-rice {
     width: 14.0625rem;
     height: 10.0625rem;
-    transform: translate(-3.125rem, 15.625rem);
+    transform: translate(-7.5rem, 15.625rem);
   }
 }/*# sourceMappingURL=index.css.map */
