@@ -2,7 +2,7 @@
 
 $breakpoints: (
   sm: 576px,
-  md: 768px,
+  md: 722px,
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
@@ -12,7 +12,7 @@ $breakpoints: (
   @return '#{$breakpoint-name} : 중단점이 유효하지 않습니다.';
 }
 
-@mixin respond-form($breakpoint) {
+@mixin respond-from($breakpoint) {
   @if map.has-key($breakpoints, $breakpoint) {
     $breakpoint-value: map.get($breakpoints, $breakpoint);
 

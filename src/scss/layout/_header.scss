@@ -2,83 +2,60 @@
 @use './../components/' as *;
 
 // 헤더
+.header{
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 0 auto;
+  width: 90%;
+  height: 50px;
+  position: relative;
+}
 
-.appHeader {
-  @include paddingX(24px);
-  @include paddingY(16px);
-  @include flexbox(column);
+.main-logo{
+  min-width: 100%;
+  position: absolute;
+  top: 17px;
+}
 
-  @include mobile {
-    background: $primary-color;
-  }
+.main-logo img{
+  width: 140px;
+  height: 15px;
+}
 
-  @include desktop {
-    position: relative;
-    background: $white;
-    @include boxSizeMinMax;
-    background: yellow;
-  }
+.nav{
+  float: right;
+}
 
-  .buttonWrapper {
-    @include mobile {
-      
-    }
-    @include desktop {
-      display: none;
-    }
+.menu{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  &-list{
+      text-align: center;
+      color: $primary-blue-100;
+      font-weight: 700;
   }
 }
 
-// 로고
-.logo {
-  @include desktop {
-    @include posCenterY;
+.menu-list a{
+  display: block;
+  width: 7rem;
+}
+
+@include mobile {
+  .menu {
+    display: none;
   }
 
-  &__link {
-    display: block;
-    $w: rem(204px);
-    $h: rem(59px);
-    width: $w;
-    height: $h;
-    @include bgRetina('webcafe-logo', 'png');
+  .main-logo {
+    width: 200px;
   }
 }
 
-// 멤버 서비스
-.memberOnly {
-  @include flexbox($j: flex-end, $a: center);
-
-  @include mobile {
-    order: -1;
-    color: $white;
-    @include textStyle(14px);
-  }
-}
-
-// 검색 폼
-.searchForm {
-  margin-top: rem(16px);
-
-  &__group {
-    @include flexbox($j: flex-end);
-  }
-
-  .formInput {
-    @include mobile {
-      flex-grow: 1;
-    }
-
-    @include desktop {
-      width: rem(400px);
-    }
-
-    &__input {
-      width: 100%;
-    }
-  }
-
-  .button--primary {
-    margin-left: rem(16px);
+@media (max-width:992px){
+  .menu a{
+    width: 4rem;
   }
 }

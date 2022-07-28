@@ -4,7 +4,8 @@
     "sass": "sass src/scss/index.scss src/style/index.css",
     "watch": "npm run sass -- --watch",
     "server": "live-server",
-    "clear": "rimraf src/style"
+    "clear": "rimraf src/style",
+    "build": "postcss src/scss/index.scss -o src/style/index.css"
   },
   "devDependencies": {
     "cssnano": "^5.1.12",
