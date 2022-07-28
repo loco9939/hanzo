@@ -1,19 +1,53 @@
-$white: #fff;
-$black: #000;
-$silver: #767676;
-$primary-color: #38302e;
-$secondary-color: #988574;
-$accent-color: #ffc;
-$accent-opacity-color: hsla(60, 50%, 50%, 0.85);
+// 주요 색상 
+$primary-blue-100 : #24388D;
+$primary-blue-80 : #5B6AA9;
+$primary-blue-60 : #919BC6;
+$primary-blue-40 : #C8CDE2;
 
-$green: #abd375;
-$yellow: #e8ca58;
-$orange: #eea60a;
-$brown: #988574;
-$blue: #6aaee6;
+// 보조 색상
+$secondary-lightblue-100 : #BAE5FB;
+$secondary-lightblue-80 : #CBEBFC;
+$secondary-lightblue-60 : #DCF2FD;
+$secondary-lightblue-40 : #EEF8FE;
 
-$accent-book: $green;
-$accent-news: $yellow;
-$accent-board: $brown;
-$accent-favorite: $orange;
-$accent-twitter: $blue;
+$secondary-violet-100 : #31287C;
+$secondary-violet-80 : #645E9D;
+$secondary-violet-60 : #9893BD;
+$secondary-violet-40 : #CBC9DE;
+
+// 액센트 색상
+$accent-amber-100 : #D2C9B6;
+$accent-amber-80 : #DDD6C8;
+$accent-amber-60 : #E8E4DA;
+$accent-amber-40 : #F4F1ED;
+
+$accent-cream-100 : #F4CA54;
+$accent-cream-80 : #F7D77F;
+$accent-cream-60 : #F9E4A9;
+$accent-cream-40 : #FCF2D4;
+
+//흑백 색상 
+$grayscale-black : #0F0F0F;
+$grayscale-darkgray : #14182C;
+$grayscale-gray : #616161;
+$grayscale-snow : #F5F5F5;
+$grayscale-white : #FEFEFE;
+
+//border 색상
+$border-casablanca : #F6B45A;
+$border-iceberg : #D1EFF1;
+$border-tumble : #DAB57E;
+$border-lightlilac : #FCFCFE;
+
+//gradient
+@mixin gradient-blue($direction){
+    background-image: linear-gradient($direction, #263D83, #102457);
+}
+
+@mixin gradient-cream($direction){
+    background-image: linear-gradient($direction, #FCF2D4, #F4CA54);
+}
+
+@mixin gradient-lightblue($direction){
+    background-image: linear-gradient($direction, #EEF8FE, #BAE5FB);
+}
