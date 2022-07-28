@@ -383,6 +383,7 @@ legend {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
 }
 .beverage-item article .beverage-title {
   border-bottom: 2px solid #0f0f0f;
@@ -391,10 +392,17 @@ legend {
   display: block;
 }
 .beverage-item article ul {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   height: 3.9375rem;
   margin: 1rem 1.5rem;
+}
+.beverage-item article ul span {
+  margin-left: 1.875rem;
 }
 .beverage-item article.is--active {
   display: block;
