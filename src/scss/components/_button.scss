@@ -1,7 +1,7 @@
-@use './../utils' as *;
+@use "./../utils" as *;
 
-@include desktop{
-  .nav-button{
+@include desktop {
+  .nav-button {
     display: none;
   }
 }
@@ -19,7 +19,6 @@
     background: none;
     margin-right: 20px;
   }
-
 
   .nav-button span {
     display: block;
@@ -57,8 +56,7 @@
     transform: translateY(-6px) rotate(-45deg);
   }
 
-  .nav-button-active span{
+  .nav-button-active span {
     background: $grayscale-white;
-   }
- 
+  }
 }
