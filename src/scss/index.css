@@ -338,7 +338,8 @@ legend {
   overflow: hidden;
   position: absolute !important;
   clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   width: 1px;
   height: 1;
   margin: -1px;
@@ -362,60 +363,18 @@ iframe {
   height: auto;
 }
 
-@media (min-width: 768px) {
-  .nav-button {
-    display: none;
-  }
+.button {
+  border: 0;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  height: 2rem;
+  font-size: 0.875rem;
 }
-@media (max-width: 767px) {
-  .nav-button {
-    z-index: 9;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 18px 16px;
-    border: none;
-    background: none;
-    margin-right: 20px;
-  }
-  .nav-button span {
-    display: block;
-    width: 50%;
-    height: 3px;
-    background: #616161;
-    position: absolute;
-    border-radius: 5px;
-  }
-  .button-burger-top {
-    top: 16px;
-    left: 25%;
-  }
-  .button-burger-middle {
-    top: 24px;
-    left: 25%;
-  }
-  .button-burger-bottom {
-    top: 32px;
-    left: 25%;
-  }
-  .nav-button-active .button-burger-top {
-    transform: translateY(10px) rotate(45deg);
-  }
-  .nav-button-active .button-burger-middle {
-    display: none;
-  }
-  .nav-button-active .button-burger-bottom {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-  .nav-button-active span {
-    background: #FEFEFE;
-  }
-}
+
 .formInput__input {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   border-radius: 0.25rem;
   height: 2rem;
   padding: 0.25rem 0.5rem;
@@ -429,7 +388,6 @@ iframe {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .main-logo img {
@@ -443,8 +401,7 @@ iframe {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  margin-left: 70px;
-  gap: 15px;
+  margin-left: 50px;
 }
 .menu-list {
   text-align: center;
@@ -456,16 +413,7 @@ iframe {
 
 .menu-list a {
   display: block;
-  padding: 0.5rem;
-}
-
-.menu-list:active, .menu-list:focus {
-  border: 4px solid #31287C;
-  border-radius: 4px;
-}
-
-.menu-list a:visited {
-  font-weight: 900;
+  margin-left: 20px;
 }
 
 @media (max-width: 767px) {
@@ -474,36 +422,33 @@ iframe {
     position: relative;
   }
   .nav {
-    z-index: 5;
+    z-index: 999;
     position: fixed;
     top: 0;
-    right: -100vw;
+    left: -100vw;
     transition: all 300ms;
   }
-  .nav-active {
-    right: 0;
+  .is-active {
+    left: 0;
   }
   .menu {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    padding-top: 10vh;
+    padding-top: 20vh;
     background: #14182C;
     display: block;
   }
   .menu-list {
     text-align: left;
-    text-indent: 40px;
     color: #FEFEFE;
     font-weight: 500;
-    padding: 0.5rem 0.5rem;
-    width: 90%;
-    border-top: 2px solid #616161;
   }
   .menu-list a {
     display: block;
-    padding: inherit;
-    width: inherit;
+    padding: 1.5rem;
+    width: 90%;
+    border-top: 2px solid #616161;
   }
   .menu-list a:active {
     background: #5B6AA9;
@@ -635,9 +580,12 @@ h1, h2, h3 {
   left: 0;
   transform: translate(350px, 100px);
   display: inline-block;
-  animation-name: moveEffect;
-  animation-duration: 400ms;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: moveEffect;
+          animation-name: moveEffect;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
 .main-img-rice {
@@ -645,10 +593,14 @@ h1, h2, h3 {
   top: 0;
   right: 0;
   display: inline-block;
-  animation-name: moveEffect;
-  animation-duration: 400ms;
-  animation-delay: 100ms;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: moveEffect;
+          animation-name: moveEffect;
+  -webkit-animation-duration: 400ms;
+          animation-duration: 400ms;
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
   transform: translate(-12.5rem, 12.5rem);
 }
@@ -686,6 +638,15 @@ h1, h2, h3 {
   top: 0;
   right: 0;
   margin-left: 150px;
+}
+
+@-webkit-keyframes moveEffect {
+  0% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(0.3125rem);
+  }
 }
 
 @keyframes moveEffect {
@@ -783,6 +744,4 @@ section .notice-btn-right {
   section {
     grid-template-areas: "video video video video video video video video video video video video" "video video video video video video video video video video video video" "notice notice notice notice notice notice notice notice notice notice notice notice" "news news news news news news news news news news news news";
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

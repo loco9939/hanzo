@@ -4,25 +4,19 @@
 // 헤더
 .header{
   padding: 1rem 2rem 1rem 2rem;
-  margin: 0 auto;
-  width: 90%;
+  width: 100vw;
   height: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.main-logo{
-  min-width: 100%;
-  position: absolute;
-  top: 17px;
-}
-
 .main-logo img{
-  width: 140px;
+  width: 160px;
   height: 15px;
-}
-
-.nav{
-  float: right;
+  min-width: 160px;
 }
 
 .menu{
@@ -30,32 +24,79 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  margin-left: 70px;
+  gap: 15px;
 
   &-list{
       text-align: center;
       color: $primary-blue-100;
       font-weight: 700;
+      font-size: 16px;
+      white-space: nowrap;
   }
 }
 
 .menu-list a{
   display: block;
-  width: 7rem;
+  padding: 0.5rem;
+}
+
+.menu-list:active, .menu-list:focus{
+  border: 4px solid $secondary-violet-100;
+  border-radius: 4px;
+}
+
+.menu-list a:visited{
+  font-weight: 900;
 }
 
 @include mobile {
-  .menu {
-    display: none;
+  .header{
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .nav{
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    transition: all 300ms;
   }
 
-  .main-logo {
-    width: 200px;
+  .nav-active{
+    right: 0;
   }
-}
 
-@media (max-width:992px){
-  .menu a{
-    width: 4rem;
+  .menu{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding-top: 10vh;
+    background: $grayscale-darkgray;
+    display: block;
   }
+
+  .menu-list{
+    text-align: left;
+    text-indent: 40px;
+    color: $grayscale-white;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    width: 90%;
+    border-top: 2px solid $grayscale-gray;
+  }
+
+  .menu-list a{
+    display: block;
+    padding: inherit;
+    width: inherit;
+  }
+
+  .menu-list a:active{
+    background: $primary-blue-80;
+  }
+
+
+  
 }
