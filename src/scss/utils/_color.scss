@@ -1,53 +1,53 @@
-// 주요 색상 
-$primary-blue-100 : #24388D;
-$primary-blue-80 : #5B6AA9;
-$primary-blue-60 : #919BC6;
-$primary-blue-40 : #C8CDE2;
+// 주요 색상
+$primary-blue-100: #24388d;
+$primary-blue-80: #5b6aa9;
+$primary-blue-60: #919bc6;
+$primary-blue-40: #c8cde2;
 
 // 보조 색상
-$secondary-lightblue-100 : #BAE5FB;
-$secondary-lightblue-80 : #CBEBFC;
-$secondary-lightblue-60 : #DCF2FD;
-$secondary-lightblue-40 : #EEF8FE;
+$secondary-lightblue-100: #bae5fb;
+$secondary-lightblue-80: #cbebfc;
+$secondary-lightblue-60: #dcf2fd;
+$secondary-lightblue-40: #eef8fe;
 
-$secondary-violet-100 : #31287C;
-$secondary-violet-80 : #645E9D;
-$secondary-violet-60 : #9893BD;
-$secondary-violet-40 : #CBC9DE;
+$secondary-violet-100: #31287c;
+$secondary-violet-80: #645e9d;
+$secondary-violet-60: #9893bd;
+$secondary-violet-40: #cbc9de;
 
 // 액센트 색상
-$accent-amber-100 : #D2C9B6;
-$accent-amber-80 : #DDD6C8;
-$accent-amber-60 : #E8E4DA;
-$accent-amber-40 : #F4F1ED;
+$accent-amber-100: #d2c9b6;
+$accent-amber-80: #ddd6c8;
+$accent-amber-60: #e8e4da;
+$accent-amber-40: #f4f1ed;
 
-$accent-cream-100 : #F4CA54;
-$accent-cream-80 : #F7D77F;
-$accent-cream-60 : #F9E4A9;
-$accent-cream-40 : #FCF2D4;
+$accent-cream-100: #f4ca54;
+$accent-cream-80: #f7d77f;
+$accent-cream-60: #f9e4a9;
+$accent-cream-40: #fcf2d4;
 
-//흑백 색상 
-$grayscale-black : #0F0F0F;
-$grayscale-darkgray : #14182C;
-$grayscale-gray : #616161;
-$grayscale-snow : #F5F5F5;
-$grayscale-white : #FEFEFE;
+//흑백 색상
+$grayscale-black: #0f0f0f;
+$grayscale-darkgray: #14182c;
+$grayscale-gray: #616161;
+$grayscale-snow: #f5f5f5;
+$grayscale-white: #fefefe;
 
 //border 색상
-$border-casablanca : #F6B45A;
-$border-iceberg : #D1EFF1;
-$border-tumble : #DAB57E;
-$border-lightlilac : #FCFCFE;
+$border-casablanca: #f6b45a;
+$border-iceberg: #d1eff1;
+$border-tumble: #dab57e;
+$border-lightlilac: #fcfcfe;
 
 //gradient
-@mixin gradient-blue($direction){
-    background-image: linear-gradient($direction, #263D83, #102457);
+@mixin gradient-blue($direction) {
+  background-image: linear-gradient($direction, #263d83, #102457);
 }
 
-@mixin gradient-cream($direction){
-    background-image: linear-gradient($direction, #FCF2D4, #F4CA54);
+@mixin gradient-cream($direction) {
+  background-image: linear-gradient($direction, #fcf2d4, #f4ca54);
 }
 
-@mixin gradient-lightblue($direction){
-    background-image: linear-gradient($direction, #EEF8FE, #BAE5FB);
+@mixin gradient-lightblue($direction) {
+  background-image: linear-gradient($direction, #eef8fe, #bae5fb);
 }
