@@ -491,7 +491,8 @@ iframe {
 
 @media (max-width: 767px) {
   .beverage-item {
-    width: 21.1875rem;
+    width: 90%;
+    min-width: 20.625rem;
     height: 23.3125rem;
   }
 }
