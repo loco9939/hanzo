@@ -1,0 +1,164 @@
+@use './../utils' as *;
+
+.beverage {
+  padding-top: rem(30px);
+  margin-bottom: rem(20px);
+}
+
+.beverage-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: rem(20px);
+}
+
+.beverage-item {
+  background-color: $grayscale-snow;
+  position: relative;
+
+  figure {
+    display: flex;
+    height: 100%;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: rem(20px);
+    justify-content: center;
+  }
+
+  figcaption{
+    margin-bottom: rem(25px);
+  }
+
+  img{
+    @include beverageImageSize;
+  }
+
+  // 개별 음료 정보
+  article {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: rem(20px);
+    background-color: rgba(255, 255, 255, 0.6);
+
+    .beverage-title {
+      font-size: rem(18px);
+      border-bottom: 2px solid $grayscale-black;
+      line-height: rem(22px);
+      span {
+        display: block;
+        font-size: rem(14px);
+        color: $grayscale-gray;
+        padding-bottom: rem(14px);
+      }
+    }
+
+    .beverage-info {
+      padding-top: rem(10px);
+      font-size: rem(16px);
+    }
+
+    ul {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 98%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      height: rem(63px);
+      margin: 0 rem(1px) rem(11px) rem(1px);
+      padding-top: rem(10px);
+
+      li {
+        position: relative;
+        width: 50%;
+        text-indent: rem(16px);
+        font-size: rem(13px);
+      }
+
+      li:nth-child(1) {
+        position: relative;
+      }
+
+      li:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: rem(1px);
+        height: rem(58px);
+        background-color: $grayscale-black;
+      }
+
+      span {
+        float: right;
+        width: 50%;
+      }
+
+      span::before {
+        content: '(';
+      }
+
+      span::after {
+        content: ')';
+      }
+    }
+
+    &.is--active {
+      display: block;
+      width: 100%;
+      border: 5px solid $primary-blue-100;
+      border-radius: rem(10px);
+      &~button{
+        display: block;
+      }
+
+      ul {
+        background: #f8f8f8;
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+  .info-close {
+    position: absolute;
+    font-size: rem(22px);
+    padding: 0;
+    top: rem(20px);
+    right: rem(24px);
+    font-weight: 300;
+    border: 0;
+    background: transparent;
+    display:none;
+  }
+
+  img {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.beverage-button:hover img,
+.beverage-button:focus img {
+  transform: scale(1.1);
+}
+
+@include mobile {
+  .beverage-item {
+    @include beverageMobileContainer;
+  }
+}
+
+@include desktop {
+  .beverage-list {
+    max-width: rem(740px);
+    @include autoMargin;
+  }
+  .beverage-item {
+    @include beverageDesktopContainer;
+  }
+}

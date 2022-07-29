@@ -2,12 +2,14 @@
 @use "./utils" as *;
 @use "./components" as *;
 @use "./layout" as *;
+@use "./pages" as *;
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-weight: 700;
   text-transform: uppercase;
 }
-
 
 // 메인 배너
 .main {
@@ -91,12 +93,15 @@ h1,h2,h3 {
     &-img {
       margin-top: rem(230px);
       padding-right: rem(100px);
+      width: 100%;
     }
   }
   &-img {
     @include posLeft(rem(20px), rem(50px));
     @include posCenterX;
-    min-width: 1200px;
+    @include desktop {
+      min-width: 1200px;
+    }
 
     &-cheese {
       @include posLeft($pos: relative);
@@ -164,16 +169,16 @@ section {
       background: $grayscale-white;
       @include paddingX(18px);
       @include paddingY(18px);
-      & em{
+      & em {
         display: block;
         font-size: rem(20px);
         color: $primary-blue-100;
         font-weight: 700;
       }
-      & time{
+      & time {
         color: $grayscale-gray;
       }
-      & p{
+      & p {
         margin-top: rem(16px);
       }
     }
