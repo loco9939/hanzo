@@ -23,7 +23,8 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 70px;
+  gap: 15px;
 
   &-list{
       text-align: center;
@@ -36,7 +37,16 @@
 
 .menu-list a{
   display: block;
-  margin-left: 20px;
+  padding: 0.5rem;
+}
+
+.menu-list:active, .menu-list:focus{
+  border: 4px solid $secondary-violet-100;
+  border-radius: 4px;
+}
+
+.menu-list a:visited{
+  font-weight: 900;
 }
 
 @include mobile {
@@ -70,12 +80,14 @@
     text-align: left;
     color: $grayscale-white;
     font-weight: 500;
+    padding: 1.5rem;
+    width: 90%;
   }
 
   .menu-list a{
     display: block;
-    padding: 1.5rem;
-    width: 90%;
+    padding: inherit;
+    width: inherit;
     border-top: 2px solid $grayscale-gray;
   }
 
