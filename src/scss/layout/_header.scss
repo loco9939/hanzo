@@ -10,6 +10,7 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .main-logo img{
@@ -56,42 +57,46 @@
   }
   
   .nav{
-    z-index: 999;
+    z-index: 5;
     position: fixed;
     top: 0;
-    left: -100vw;
+    right: -100vw;
     transition: all 300ms;
   }
 
-  .is-active{
-    left: 0;
+  .nav-active{
+    right: 0;
   }
 
   .menu{
     height: 100vh;
     width: 100vw;
     margin: 0;
-    padding-top: 20vh;
+    padding-top: 10vh;
     background: $grayscale-darkgray;
     display: block;
   }
 
   .menu-list{
     text-align: left;
+    text-indent: 40px;
     color: $grayscale-white;
     font-weight: 500;
-    padding: 1.5rem;
+    padding: 0.5rem 0.5rem;
     width: 90%;
+    border-top: 2px solid $grayscale-gray;
   }
 
   .menu-list a{
     display: block;
     padding: inherit;
     width: inherit;
-    border-top: 2px solid $grayscale-gray;
   }
 
   .menu-list a:active{
     background: $primary-blue-80;
   }
+
+
+  
 }

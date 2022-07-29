@@ -362,14 +362,57 @@ iframe {
   height: auto;
 }
 
-.button {
-  border: 0;
-  padding: 0.25rem 1rem;
-  border-radius: 0.25rem;
-  height: 2rem;
-  font-size: 0.875rem;
+@media (min-width: 768px) {
+  .nav-button {
+    display: none;
+  }
 }
-
+@media (max-width: 767px) {
+  .nav-button {
+    z-index: 9;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 18px 16px;
+    border: none;
+    background: none;
+    margin-right: 20px;
+  }
+  .nav-button span {
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: #616161;
+    position: absolute;
+    border-radius: 5px;
+  }
+  .button-burger-top {
+    top: 16px;
+    left: 25%;
+  }
+  .button-burger-middle {
+    top: 24px;
+    left: 25%;
+  }
+  .button-burger-bottom {
+    top: 32px;
+    left: 25%;
+  }
+  .nav-button-active .button-burger-top {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .nav-button-active .button-burger-middle {
+    display: none;
+  }
+  .nav-button-active .button-burger-bottom {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  .nav-button-active span {
+    background: #FEFEFE;
+  }
+}
 .formInput__input {
   -webkit-appearance: none;
   appearance: none;
@@ -386,6 +429,7 @@ iframe {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .main-logo img {
@@ -430,35 +474,36 @@ iframe {
     position: relative;
   }
   .nav {
-    z-index: 999;
+    z-index: 5;
     position: fixed;
     top: 0;
-    left: -100vw;
+    right: -100vw;
     transition: all 300ms;
   }
-  .is-active {
-    left: 0;
+  .nav-active {
+    right: 0;
   }
   .menu {
     height: 100vh;
     width: 100vw;
     margin: 0;
-    padding-top: 20vh;
+    padding-top: 10vh;
     background: #14182C;
     display: block;
   }
   .menu-list {
     text-align: left;
+    text-indent: 40px;
     color: #FEFEFE;
     font-weight: 500;
-    padding: 1.5rem;
+    padding: 0.5rem 0.5rem;
     width: 90%;
+    border-top: 2px solid #616161;
   }
   .menu-list a {
     display: block;
     padding: inherit;
     width: inherit;
-    border-top: 2px solid #616161;
   }
   .menu-list a:active {
     background: #5B6AA9;

@@ -1,10 +1,64 @@
 @use './../utils' as *;
 
+@include desktop{
+  .nav-button{
+    display: none;
+  }
+}
 
-.button {
-  border: 0;
-  padding: rem(4px) rem(16x);
-  border-radius: rem(4px);
-  height: rem(32px);
-  font-size: rem(14px);
+@include mobile {
+  .nav-button {
+    z-index: 9;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 18px 16px;
+    border: none;
+    background: none;
+    margin-right: 20px;
+  }
+
+
+  .nav-button span {
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: $grayscale-gray;
+    position: absolute;
+    border-radius: 5px;
+  }
+
+  .button-burger-top {
+    top: 16px;
+    left: 25%;
+  }
+
+  .button-burger-middle {
+    top: 24px;
+    left: 25%;
+  }
+
+  .button-burger-bottom {
+    top: 32px;
+    left: 25%;
+  }
+
+  .nav-button-active .button-burger-top {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .nav-button-active .button-burger-middle {
+    display: none;
+  }
+
+  .nav-button-active .button-burger-bottom {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .nav-button-active span{
+    background: $grayscale-white;
+   }
+ 
 }
